@@ -34,8 +34,8 @@ h1, h2, h3, h4, h5, h6, p {
 
 .subtitle,
 .question-text {
-    font-size: 1.5em;
-    color: #ffd700;
+  font-size: 1.5em;
+  color: #ffd700;
 }
 
 .start-button,
@@ -53,10 +53,31 @@ h1, h2, h3, h4, h5, h6, p {
 
 .start-button:hover,
 .choice-button:hover {
-    color: #0a1172;
-    background-color: #ffc700;
+  color: #0a1172;
+  background-color: #ffc700;
   transform: scale(1.05);
 }
+
+.links-container {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.qr-code {
+  margin: 10px;
+  height: 100px;
+  width: 100px;
+}
+
+.highlight-text {
+  color: #ffc700;
+  font-weight: bold;
+}
+
+.subtitle {
+  margin-bottom: 20px;
+}
+
 
 @keyframes bounce {
     0%, 20%, 50%, 80%, 100% {
@@ -71,7 +92,7 @@ h1, h2, h3, h4, h5, h6, p {
   }
 
 @keyframes spin {
-    0% { transform: rotate(0deg); }
+    25% { transform: rotate(33deg); }
     100% { transform: rotate(360deg); } 
   }
 .animation-container {
@@ -80,10 +101,10 @@ h1, h2, h3, h4, h5, h6, p {
   animation: spin 2s linear infinite;
 }
 
-.score {
+/* .score {
   font-size: 1.2em;
   color: #ffd700;
-}
+} */
 
 @media screen and (max-width: 600px) {
   .container {
@@ -94,10 +115,11 @@ h1, h2, h3, h4, h5, h6, p {
     font-size: 1.5em;
     animation: bounce 2s infinite;
   }
-  .score {
-    font-size: 1.5em;
-    color: #E63946;
-  }
+.score {
+  font-size: 2em;
+  text-align: center;
+  color: #E63946;
+}
 
   .subtitle,
   .question-text {
@@ -123,7 +145,7 @@ h1, h2, h3, h4, h5, h6, p {
     }
 }
 .question-container {
-    background: #f2f2f2;
+    background: #f4edf7;
   border-radius: 10px;
   box-shadow: 0 0 10px #ddd;
   padding: 30px;
@@ -136,6 +158,13 @@ h1, h2, h3, h4, h5, h6, p {
   font-size: 1.5em;
   margin-bottom: 20px;
   font-weight: bold;
+}
+.question-box {
+  background-color: #0a1172;
+  border: 2px solid #ffd700;
+  border-radius: 10px;
+  padding: 10px;
+  margin-bottom: 20px;
 }
 
 .choice-button {
@@ -184,4 +213,56 @@ color: #357b9d;
 .end-screen p {
 font-size: 1.5em;
 }
+
+@keyframes swoopIn {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.swoopIn {
+  animation: swoopIn 1s forwards;
+}
+
+@keyframes fallOff {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+}
+
+.fallOff {
+  animation: fallOff 1s forwards;
+}
+
+.rectangle {
+  width: 200px;
+  height: 100px;
+  background-color: #357b9d;
+}
+
+.circle {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: #357b9d;
+}
+
+.triangle {
+  width: 0;
+  height: 0;
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+  border-bottom: 100px solid #357b9d;
+}
+
     

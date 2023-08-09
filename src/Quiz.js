@@ -3,14 +3,12 @@ import axios from './axiosInstance';
 import Question from './Question';
 import StartScreen from './StartScreen'; // Import the StartScreen component
 
-
 function Quiz() {
   const [currentQuestion, setCurrentQuestion] = useState(null);
   const [score, setScore] = useState(0);
   const [questionIndex, setQuestionIndex] = useState(0);
   const [isFinished, setIsFinished] = useState(false);
   const [hasStarted, setHasStarted] = useState(false); // Add a new state variable to track if the game has started
-
 
   useEffect(() => {
     axios.get(`/questions/${questionIndex}`).then(res => {
@@ -35,7 +33,7 @@ function Quiz() {
       if (res.data.isCorrect) {
         setScore(score + 1);
       }
-      if (questionIndex === 2) { // assuming there are 10 questions
+      if (questionIndex === 6) { // assuming there are 10 questions
         setIsFinished(true);
         return;
       }
@@ -46,7 +44,7 @@ function Quiz() {
   return !isFinished ? (
     currentQuestion ? (
       <div>
-        <Question {...currentQuestion} onAnswer={handleAnswer} />
+        <Question key={questionIndex} {...currentQuestion} onAnswer={handleAnswer} /> {/* Add the key prop here */}
         <p className='score'>Score: {score}</p>
       </div>
     ) : (
@@ -55,7 +53,7 @@ function Quiz() {
   ) : (
     <div className="end-screen">
       <h1>Congratulations, you are a Genius!</h1>
-      <p>Your final score is: {score} out of 10</p>
+      <p>Your final score is: {score} out of 7</p>
     </div>
   );
 }
